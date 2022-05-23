@@ -7,6 +7,13 @@ import { EncabezadoComponent } from './componentes/encabezado/encabezado.compone
 import { LogoargprogramaComponent } from './componentes/logoargprograma/logoargprograma.component';
 import { RsocialesComponent } from './componentes/rsociales/rsociales.component';
 import { CartelComponent } from './componentes/cartel/cartel.component';
+import { AcercadeComponent } from './componentes/acercade/acercade.component';
+import { ExperienciaComponent } from './componentes/experiencia/experiencia.component';
+import { EducacionComponent } from './componentes/educacion/educacion.component';
+
+/* Complementos extenos */
+import { NgCircleProgressModule } from 'ng-circle-progress';
+import { HabilidadesComponent } from './componentes/habilidades/habilidades.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +21,17 @@ import { CartelComponent } from './componentes/cartel/cartel.component';
     EncabezadoComponent,
     LogoargprogramaComponent,
     RsocialesComponent,
-    CartelComponent
+    CartelComponent,
+    AcercadeComponent,
+    ExperienciaComponent,
+    EducacionComponent,
+    HabilidadesComponent
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgCircleProgressModule.forRoot({})
   ],
   providers: [],
   bootstrap: [AppComponent]
