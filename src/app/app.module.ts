@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http'
 
+/* Secciones del proyecto */
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EncabezadoComponent } from './componentes/encabezado/encabezado.component';
@@ -9,12 +11,12 @@ import { CartelComponent } from './componentes/cartel/cartel.component';
 import { AcercadeComponent } from './componentes/acercade/acercade.component';
 import { ExperienciaComponent } from './componentes/experiencia/experiencia.component';
 import { EducacionComponent } from './componentes/educacion/educacion.component';
+import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
+import { PiedepaginaComponent } from './componentes/piedepagina/piedepagina.component';
+import { HabilidadesComponent } from './componentes/habilidades/habilidades.component';
 
 /* Complementos extenos */
 import { NgCircleProgressModule } from 'ng-circle-progress';
-import { HabilidadesComponent } from './componentes/habilidades/habilidades.component';
-import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
-import { PiedepaginaComponent } from './componentes/piedepagina/piedepagina.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { PiedepaginaComponent } from './componentes/piedepagina/piedepagina.comp
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgCircleProgressModule.forRoot({})
+    NgCircleProgressModule.forRoot({}),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
