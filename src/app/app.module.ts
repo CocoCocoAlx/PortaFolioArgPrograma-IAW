@@ -19,6 +19,8 @@ import { HabilidadesComponent } from './componentes/habilidades/habilidades.comp
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { PrincipalComponent } from './componentes/principal/principal.component';
 import { LogueoComponent } from './componentes/logueo/logueo.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NuevoUsuarioComponent } from './modelos/nuevo-usuario/nuevo-usuario.component';
 
 @NgModule({
   declarations: [
@@ -33,14 +35,16 @@ import { LogueoComponent } from './componentes/logueo/logueo.component';
     ProyectosComponent,
     PiedepaginaComponent,
     PrincipalComponent,
-    LogueoComponent
+    LogueoComponent,
+    NuevoUsuarioComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgCircleProgressModule.forRoot({}),
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

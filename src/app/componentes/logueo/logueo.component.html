@@ -11,7 +11,7 @@
               <div class="col-md-6 col-lg-7 d-flex align-items-center">
                 <div class="card-body p-4 p-lg-5 text-black">
   
-                  <form>
+                  <form [formGroup]="form">
   
                     <div class="d-flex align-items-center mb-3 pb-1">
                       <i class="fas fa-cubes fa-2x me-3" style="color: black;"></i>
@@ -21,13 +21,33 @@
                     <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Entrar a mi cuenta</h5>
   
                     <div class="form-outline mb-4">
-                      <input type="email" id="form2Example17" class="form-control form-control-lg" />
                       <label class="form-label" for="form2Example17">Dirección de correo electrónico</label>
+                      <input type="email" formControlName="email" id="form2Example17" class="form-control form-control-lg"
+                      [ngClass]="{'is-invalid': Email?.errors && Email?.touched,
+                      'is-valid': !Email?.errors && Email?.touched}"/>
+                    <div *ngIf="Email?.errors && Email?.touched">
+                      <p *ngIf="Email?.hasError('required')" class="text-danger">
+                        Se requiere una dirección de correo.
+                      </p>
+                      <p *ngIf="Email?.hasError('email')" class="text-danger">
+                        El formato del correo electrónico debe ser válido.
+                      </p>
                     </div>
-  
+                    </div>
+
                     <div class="form-outline mb-4">
-                      <input type="password" id="form2Example27" class="form-control form-control-lg" />
                       <label class="form-label" for="form2Example27">Contraseña</label>
+                      <input type="password" formControlName="clave" id="form2Example27" class="form-control form-control-lg"
+                      [ngClass]="{'is-invalid': Clave?.errors && Clave?.touched,
+                      'is-valid': !Clave?.errors && Clave?.touched}"/>
+                      <div *ngIf="Clave?.errors && Clave?.touched">
+                        <p *ngIf="Clave?.hasError('required')" class="text-danger">
+                          Se requiere una contraseña.
+                        </p>
+                        <p *ngIf="Clave?.hasError('minlength')" class="text-danger">
+                          La longitud mínima de la contraseña es de 8 caracteres.
+                        </p>
+                      </div>  
                     </div>
   
                     <div class="pt-1 mb-4">

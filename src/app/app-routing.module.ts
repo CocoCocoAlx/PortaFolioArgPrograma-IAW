@@ -4,8 +4,9 @@ import { LogueoComponent } from './componentes/logueo/logueo.component';
 import { PrincipalComponent } from './componentes/principal/principal.component';
 
 const routes: Routes = [
-  {path: '', component: PrincipalComponent},
-  {path: 'logueo', component: LogueoComponent}
+  {path: 'logueo', component: LogueoComponent},
+  {path: 'principal', component: PrincipalComponent},
+  {path: '',redirectTo: 'logueo',pathMatch:'full'}, 
 ];
 
 @NgModule({
