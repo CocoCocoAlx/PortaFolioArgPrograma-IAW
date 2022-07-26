@@ -20,6 +20,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { PrincipalComponent } from './componentes/principal/principal.component';
 import { LogueoComponent } from './componentes/logueo/logueo.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InterceptorProvider } from './servicio/interceptor-service';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [InterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

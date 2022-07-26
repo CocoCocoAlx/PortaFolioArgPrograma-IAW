@@ -6,6 +6,7 @@ import { PrincipalComponent } from './componentes/principal/principal.component'
 const routes: Routes = [
   {path: 'logueo', component: LogueoComponent},
   {path: 'principal', component: PrincipalComponent},
+  {path: '',redirectTo: 'logueo',pathMatch:'full'}
 ];
 
 @NgModule({
