@@ -16,7 +16,7 @@ export class LogueoComponent implements OnInit {
   nombreUsuario!: string;
   password!: string;
   roles: string[] = [];
-  mensaje!: string;
+  mensajeError!: string;
 
   constructor(private tokenService: TokenService, private AuthService: AuthService, private Router: Router) {
     
@@ -44,8 +44,8 @@ export class LogueoComponent implements OnInit {
     }, err =>{
       this.isLogged = false;
       this.isLogginFail = true;
-      this.mensaje = err.error.mensaje;
-      console.log(this.mensaje);
+      this.mensajeError = err.error.mensaje;
+      console.log(this.mensajeError);
       
       
       
