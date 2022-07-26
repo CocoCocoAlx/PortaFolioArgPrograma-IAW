@@ -15,12 +15,11 @@ import { ProyectosComponent } from './componentes/proyectos/proyectos.component'
 import { PiedepaginaComponent } from './componentes/piedepagina/piedepagina.component';
 import { HabilidadesComponent } from './componentes/habilidades/habilidades.component';
 
-/* Complementos extenos */
+/* Complementos externos */
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { PrincipalComponent } from './componentes/principal/principal.component';
 import { LogueoComponent } from './componentes/logueo/logueo.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { NuevoUsuarioComponent } from './modelos/nuevo-usuario/nuevo-usuario.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,15 +34,14 @@ import { NuevoUsuarioComponent } from './modelos/nuevo-usuario/nuevo-usuario.com
     ProyectosComponent,
     PiedepaginaComponent,
     PrincipalComponent,
-    LogueoComponent,
-    NuevoUsuarioComponent
-
+    LogueoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgCircleProgressModule.forRoot({}),
     HttpClientModule,
+    FormsModule,
     ReactiveFormsModule
   ],
   providers: [],

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { LoginUsuario } from 'src/app/modelos/login-usuario';
+import { AuthService } from 'src/app/servicio/auth.service';
+import { TokenService } from 'src/app/servicio/token.service';
 
 @Component({
   selector: 'app-logueo',
@@ -7,27 +10,47 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./logueo.component.css']
 })
 export class LogueoComponent implements OnInit {
+  isLogged = false;
+  isLogginFail = false;
+  loginUsuario!: LoginUsuario;
+  nombreUsuario!: string;
+  password!: string;
+  roles: string[] = [];
+  mensaje!: string;
 
-  form:FormGroup;
-
-  constructor(private constructorFormulario:FormBuilder) {
-    this.form=this.constructorFormulario.group(
-      {
-        email:['',[Validators.required,Validators.email]],
-        clave:['',[Validators.required,Validators.minLength(8)]]
-      }
-    )
+  constructor(private tokenService: TokenService, private AuthService: AuthService, private Router: Router) {
+    
   }
 
   ngOnInit(): void {
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+      this.isLogginFail = false;
+      this.roles = this.tokenService.getAuthorities();
+    }
+
   }
 
-  get Email(){
-    return this.form.get('email');
+  onLogin(): void{
+    this.loginUsuario = new LoginUsuario(this.nombreUsuario, this.password);
+    this.AuthService.login(this.loginUsuario).subscribe(data =>{
+      this.isLogged = true;
+      this.isLogginFail = false;
+      this.tokenService.setToken(data.token);
+      this.tokenService.setUserName(data.nombreUsuario);
+      this.tokenService.setAuthorities(data.authorities);
+      this.roles = data.authorities;
+      this.Router.navigate(['principal']);
+    }, err =>{
+      this.isLogged = false;
+      this.isLogginFail = true;
+      this.mensaje = err.error.mensaje;
+      console.log(this.mensaje);
+      
+      
+      
+      
+    }
+    )
   }
-
-  get Clave(){
-    return this.form.get('clave');
-  }
-
 }
