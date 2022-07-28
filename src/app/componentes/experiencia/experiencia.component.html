@@ -1,24 +1,26 @@
 <div class="row">
     <h1>Experiencia laboral</h1>
+    <div class="col lg-2">
+        <td><button class="btn btn-outline-secondary" routerLink="/nuevaexperiencia" *ngIf="isLogged"><i class="fa-solid fa-plus"></i> Agregar nueva experiencia</button></td>
+    </div>
+
     <div class="col-xg-11">
-        <ul>
-            <li>
-                <h1>Instituto Virgen de Itatí</h1> - <h3>(años)</h3>
-            </li>
-            <p>Administrador de sistemas</p>
-        </ul>
-        <ul>
-            <li>
-                <h1>Instituto Virgen de Itatí</h1> - <h3>(años)</h3>
-            </li>
-            <p>Profesor de Informática, nivel secundario</p>
-        </ul>
-        <ul>
-            <li>
-                <h1>Instituto Virgen de Itatí</h1> - <h3>(años)</h3>
-            </li>
-            <p>Profesor de Informática, nivel primario</p>
-        </ul>
+        <table class="table">
+            <thead>
+                <tr >
+                    <th scope="col">Experiencia</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Borrar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let Experiencia of exp">
+                    <td>{{Experiencia.nombreExp}}</td>
+                    <td>{{Experiencia.detalleExp}}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
 </div>

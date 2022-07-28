@@ -20,6 +20,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { PrincipalComponent } from './componentes/principal/principal.component';
 import { LogueoComponent } from './componentes/logueo/logueo.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NuevaExperienciaComponent } from './componentes/experiencia/nueva-experiencia.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ProyectosComponent,
     PiedepaginaComponent,
     PrincipalComponent,
-    LogueoComponent
+    LogueoComponent,
+    NuevaExperienciaComponent
   ],
   imports: [
     BrowserModule,

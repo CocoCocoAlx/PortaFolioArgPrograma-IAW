@@ -46,10 +46,6 @@ export class LogueoComponent implements OnInit {
       this.isLogginFail = true;
       this.mensajeError = err.error.mensaje;
       console.log(this.mensajeError);
-      
-      
-      
-      
     }
     )
   }
