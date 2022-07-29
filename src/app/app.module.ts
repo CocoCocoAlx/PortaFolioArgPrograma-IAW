@@ -10,7 +10,6 @@ import { LogoargprogramaComponent } from './componentes/logoargprograma/logoargp
 import { CartelComponent } from './componentes/cartel/cartel.component';
 import { AcercadeComponent } from './componentes/acercade/acercade.component';
 import { ExperienciaComponent } from './componentes/experiencia/experiencia.component';
-import { EducacionComponent } from './componentes/educacion/educacion.component';
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 import { PiedepaginaComponent } from './componentes/piedepagina/piedepagina.component';
 import { HabilidadesComponent } from './componentes/habilidades/habilidades.component';
@@ -22,6 +21,9 @@ import { LogueoComponent } from './componentes/logueo/logueo.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NuevaExperienciaComponent } from './componentes/experiencia/nueva-experiencia.component';
 import { EditarExperienciaComponent } from './componentes/experiencia/editar-experiencia.component';
+import { EducacionComponent } from './componentes/educacion/educacion.component';
+import { NuevoEstudioComponent } from './componentes/educacion/nuevo-estudio.component';
+import { EditarEstudiosComponent } from './componentes/educacion/editar-estudios.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { EditarExperienciaComponent } from './componentes/experiencia/editar-exp
     PrincipalComponent,
     LogueoComponent,
     NuevaExperienciaComponent,
-    EditarExperienciaComponent
+    EditarExperienciaComponent,
+    NuevoEstudioComponent,
+    EditarEstudiosComponent,
   ],
   imports: [
     BrowserModule,
