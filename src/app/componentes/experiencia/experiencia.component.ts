@@ -29,5 +29,17 @@ export class ExperienciaComponent implements OnInit {
     this.experienciaServicio.lista().subscribe(data => {
       this.exp = data;})
   }
+
+  borrar(id?: number){
+    if(id != undefined){
+    this.experienciaServicio.borrar(id).subscribe(
+      data => {
+        alert("Se borró la experiencia");
+        window.location.reload();
+      }, err => {
+        alert("Error");
+    })
+  }
+  }
 }
 

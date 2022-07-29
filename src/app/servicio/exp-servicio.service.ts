@@ -16,7 +16,7 @@ export class ExpServicioService {
   }
 
   public detalle(id: number): Observable<Experiencialab>{
-    return this.httpClient.get<Experiencialab>(this.expUrl + `/detalle/${id}`);
+    return this.httpClient.get<Experiencialab>(this.expUrl + `detalle/${id}`);
   }
 
   public save(experiencia: Experiencialab):Observable<any>{
@@ -24,7 +24,7 @@ export class ExpServicioService {
   }
 
   public actualizar(id: number, experiencia: Experiencialab): Observable<any>{
-    return this.httpClient.post<any>(this.httpClient+`actualizar/${id}`, experiencia);
+    return this.httpClient.put<any>(this.expUrl+`actualizar/${id}`, experiencia);
   }
 
   public borrar(id: number): Observable<any>{

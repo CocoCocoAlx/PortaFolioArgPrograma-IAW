@@ -1,0 +1,17 @@
+<div class="container-mt-3" *ngIf="exp">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="nombreExp">Nombre de la empresa o institución</label>
+                    <input type="text" class="form-control" id="nombreExp" name="nombreExp" [(ngModel)]="exp.nombreExp" required>
+                </div>
+                <div class="form-group">
+                    <label for="detalleExp">Detalles del puesto</label>
+                    <input type="text" class="form-control" id="detalleExp" name="detalleExp" [(ngModel)]="exp.detalleExp" required>
+                </div>
+                <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Actualizar</button>
+            </form>
+        </div>
+    </div>
+</div>
