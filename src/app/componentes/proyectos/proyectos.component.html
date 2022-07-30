@@ -20,6 +20,7 @@
                     <td>{{Proyectos.detalleProy}}</td>
                     <td>{{Proyectos.enlaceProy}}</td>
                     <td><a href="{{Proyectos.enlaceProy}}"><img src={{Proyectos.imagen}} class="img-fluid img-proyect" width="100" height="100"></a></td>
+                    <td *ngIf="isLogged"><button class="btn btn-primary" routerLink="/editarproyecto/{{Proyectos.id}}"><i class="bi bi-pencil-square"></i> | Editar</button></td>
                     <td *ngIf="isLogged"><button class="btn btn-danger" (click)="borrar(Proyectos.id)"><i class="bi bi-trash3-fill"></i> | Borrar</button></td>
                 </tr>
             </tbody>

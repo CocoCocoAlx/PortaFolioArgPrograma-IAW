@@ -19,6 +19,10 @@ export class ProyectosService {
       return this.httpClient.get<Proyectos>(this.proyUrl + `detalle/${id}`);
     }
 
+    public actualizar(id: number, proyecto: Proyectos): Observable<any>{
+      return this.httpClient.put<any>(this.proyUrl+`actualizar/${id}`, proyecto);
+    }
+  
     public save(proyectos: Proyectos):Observable<any>{
       return this.httpClient.post<any>(this.proyUrl+'crear',proyectos);
     }

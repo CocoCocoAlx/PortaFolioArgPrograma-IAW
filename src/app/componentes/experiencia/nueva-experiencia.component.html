@@ -2,14 +2,18 @@
     <div class="row">
         <div class="col-md-4 mx-auto">
             <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                <br>
                 <div class="form-group">
                     <label for="nombreExp">Nombre de la empresa o institución</label>
                     <input type="text" class="form-control" id="nombreExp" name="nombreExp" [(ngModel)]="nombreExp" required>
                 </div>
+                <br>
                 <div class="form-group">
                     <label for="detalleExp">Detalles del puesto</label>
                     <input type="text" class="form-control" id="detalleExp" name="detalleExp" [(ngModel)]="detalleExp" required>
                 </div>
+                <br>
+                <br>
                 <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Crear</button>
             </form>
         </div>
