@@ -6,6 +6,7 @@ import { EditarExperienciaComponent } from './componentes/experiencia/editar-exp
 import { NuevaExperienciaComponent } from './componentes/experiencia/nueva-experiencia.component';
 import { LogueoComponent } from './componentes/logueo/logueo.component';
 import { PrincipalComponent } from './componentes/principal/principal.component';
+import { NuevoProyectoComponent } from './componentes/proyectos/nuevo-proyecto.component';
 
 const routes: Routes = [
   {path: 'logueo', component: LogueoComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'nuevaexperiencia', component: NuevaExperienciaComponent},
   {path: 'editarestudio/:id', component: EditarEstudiosComponent},
   {path: 'nuevoestudio', component: NuevoEstudioComponent},
+  {path: 'nuevoproyecto', component: NuevoProyectoComponent},
   {path: '', redirectTo: 'logueo', pathMatch: 'full'}
 ];
 
