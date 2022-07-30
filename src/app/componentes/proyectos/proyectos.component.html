@@ -8,7 +8,7 @@
         <table class="table">
             <thead>
                 <tr >
-                    <th scope="col">Experiencia</th>
+                    <th scope="col">Nombre del Proyecto</th>
                     <th scope="col">Descripción</th>
                     <th scope="col">Enlace</th>
                     <th scope="col">Imagen</th>
@@ -19,7 +19,7 @@
                     <td><h2>{{Proyectos.nombreProy}}</h2></td>
                     <td>{{Proyectos.detalleProy}}</td>
                     <td>{{Proyectos.enlaceProy}}</td>
-                    <td><img src="{'data:image/jpg;base64,' + {{Proyectos.imagen}}}}"/></td>
+                    <td><img src="{'data:image/jpg;base64,' + {{Proyectos.imagen}}"/></td>
                     <td *ngIf="isLogged"><button class="btn btn-danger" (click)="borrar(Proyectos.id)"><i class="bi bi-trash3-fill"></i> | Borrar</button></td>
                 </tr>
             </tbody>
