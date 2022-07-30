@@ -1,13 +1,28 @@
 <div class="row">
     <h1>Mis proyectos</h1>
-    <div class="contenedor">
-        <div class="col-sm-12 col-md-7 col-lg-7 proyecto">
-            <h2>CRUD básico con Angular + SpringBoot</h2>
-            <p>Un CRUD sencillo utilizando Angular y SpringBoot</p>
-        </div>
-        <div class="col-sm-12 col-md-3 offset-md-1 col-lg-3 offset-lg-1 proyecto-imagen">
-            <a href="https://github.com/CocoCocoAlx/MiArgPrograma-Angular"><img src="../../../assets/lista-tareas.png" alt="imagen de la app de lista de tareas" class="img-fluid proyecto-captura"></a>
-        </div>
+    <div class="col lg-2">
+        <td><button class="btn btn-outline-secondary" routerLink="/nuevoproyecto" *ngIf="isLogged"><i class="fa-solid fa-plus"></i> Agregar nuevo proyecto</button></td>
     </div>
 
+    <div class="col-xg-11">
+        <table class="table">
+            <thead>
+                <tr >
+                    <th scope="col">Experiencia</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Enlace</th>
+                    <th scope="col">Imagen</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let Proyectos of proy">
+                    <td><h2>{{Proyectos.nombreProy}}</h2></td>
+                    <td>{{Proyectos.detalleProy}}</td>
+                    <td>{{Proyectos.enlaceProy}}</td>
+                    <td><img src="{'data:image/jpg;base64,' + {{Proyectos.imagen}}}}"/></td>
+                    <td *ngIf="isLogged"><button class="btn btn-danger" (click)="borrar(Proyectos.id)"><i class="bi bi-trash3-fill"></i> | Borrar</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

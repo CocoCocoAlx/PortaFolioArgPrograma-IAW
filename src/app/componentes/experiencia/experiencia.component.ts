@@ -38,6 +38,7 @@ export class ExperienciaComponent implements OnInit {
         window.location.reload();
       }, err => {
         alert("Error");
+        window.location.reload();
     })
   }
   }
