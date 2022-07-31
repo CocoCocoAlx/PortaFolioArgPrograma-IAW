@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Habilidad } from 'src/app/modelos/habilidad';
+import { HabilidadService } from 'src/app/servicio/habilidad.service';
+import { TokenService } from 'src/app/servicio/token.service';
 
 @Component({
   selector: 'app-habilidades',
@@ -6,10 +9,40 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./habilidades.component.css']
 })
 export class HabilidadesComponent implements OnInit {
+  hab: Habilidad[] = [];
 
-  constructor() { }
+  constructor(private habilidadServicio: HabilidadService, private tokenServicio: TokenService) { }
+
+  isLogged=false;
 
   ngOnInit(): void {
+    this.cargarHabilidades();
+
+    if(this.tokenServicio.getToken()){
+      this.isLogged=true;
+    } else {
+      this.isLogged=false;
+    }
+  }
+
+  cargarHabilidades(): void{
+    this.habilidadServicio.lista().subscribe(data=>{
+      this.hab = data;
+    }
+      )
+  }
+
+  borrar(id?: number){
+    if(id != undefined){
+      this.habilidadServicio.borrar(id).subscribe(
+        data => {
+          alert("Se borró la entrada");
+          window.location.reload();
+        }, err => {
+          alert("Error");
+          window.location.reload();
+      })
+    }  
   }
 
 }
