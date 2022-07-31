@@ -1,11 +1,12 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <div class="row">
-    <h1>Mis proyectos</h1>
+    <h1 id="titulo">Mis proyectos</h1>
     <div class="col lg-2">
         <td><button class="btn btn-outline-secondary" routerLink="/nuevoproyecto" *ngIf="isLogged"><i class="fa-solid fa-plus"></i> Agregar nuevo proyecto</button></td>
     </div>
 
-    <div class="col-xg-11">
-        <table class="table">
+    <div class="col-xg-12 table-responsive-sm">
+        <table class="table align-middle table-hover" id="tablas">
             <thead>
                 <tr >
                     <th scope="col">Nombre del Proyecto</th>
@@ -14,12 +15,12 @@
                     <th scope="col">Imagen</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="table-group-divider">
                 <tr *ngFor="let Proyectos of proy">
                     <td><h2>{{Proyectos.nombreProy}}</h2></td>
                     <td>{{Proyectos.detalleProy}}</td>
-                    <td>{{Proyectos.enlaceProy}}</td>
-                    <td><a href="{{Proyectos.enlaceProy}}"><img src={{Proyectos.imagen}} class="img-fluid img-proyect" width="100" height="100"></a></td>
+                    <td><a href="{{Proyectos.enlaceProy}}"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" class="img-fluid img-proyect rounded center-block d-block mx-auto" width="50" height="50"></a></td>
+                    <td><a href="{{Proyectos.imagen}}"><img src={{Proyectos.imagen}} class="img-fluid img-proyect rounded center-block d-block mx-auto" width="150" height="150"></a></td>
                     <td *ngIf="isLogged"><button class="btn btn-primary" routerLink="/editarproyecto/{{Proyectos.id}}"><i class="bi bi-pencil-square"></i> | Editar</button></td>
                     <td *ngIf="isLogged"><button class="btn btn-danger" (click)="borrar(Proyectos.id)"><i class="bi bi-trash3-fill"></i> | Borrar</button></td>
                 </tr>

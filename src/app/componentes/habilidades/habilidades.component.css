@@ -2,3 +2,15 @@
     padding: 15px;
     background-color: beige;
 }
+
+#titulo{
+    font-weight: bolder;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    font-style: oblique;
+}
+
+#tablas{
+    font-weight: normal;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: normal;
+}

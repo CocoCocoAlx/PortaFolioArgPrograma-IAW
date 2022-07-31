@@ -1,21 +1,22 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <div class="row">
-    <h1>Educación</h1>
+    <h1 id="titulo">Educación</h1>
     <div class="col lg-2">
         <td><button class="btn btn-outline-secondary" routerLink="/nuevoestudio" *ngIf="isLogged"><i class="fa-solid fa-plus"></i> Agregar estudios</button></td>
     </div>
-
-    <div class="col-xg-11">
-        <table class="table">
+    <div class="col-xg-11 table-responsive-sm">
+        <table class="table align-middle table-hover" id="tablas">
             <thead>
                 <tr >
                     <th scope="col">Institución</th>
                     <th scope="col">Título/Certificación</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="table-group-divider">
                 <tr *ngFor="let Estudios of est">
                     <td><h2>{{Estudios.nombreEst}}</h2></td>
                     <td>{{Estudios.detalleEst}}</td>
+                    <td>{{Estudios.periodoEst}}</td>
                     <td *ngIf="isLogged"><button class="btn btn-primary" routerLink="/editarestudio/{{Estudios.id}}"><i class="bi bi-pencil-square"></i> | Editar</button></td>
                     <td *ngIf="isLogged"><button class="btn btn-danger" (click)="borrar(Estudios.id)"><i class="bi bi-trash3-fill"></i> | Borrar</button></td>
                 </tr>

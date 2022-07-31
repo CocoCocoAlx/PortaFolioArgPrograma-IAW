@@ -3,9 +3,21 @@
 }
 
 div{
-    background-color: burlywood;
+    background-color:khaki;
 }
 
 h1,h3{
     display: inline;
+}
+
+#titulo{
+    font-weight: bolder;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    font-style: oblique;
+}
+
+#tablas{
+    font-weight: normal;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: normal;
 }

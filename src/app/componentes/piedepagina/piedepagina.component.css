@@ -1,12 +1,12 @@
 .row{
-    background-color: brown;
+    background-color: #7a7066;
 }
 
 footer{
-    color: brown;
+    color: black;
     font-size: 14px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     display: flex;
     flex-direction:column;
-    box-shadow: 2px 2px 2px gray;
+    margin: 12px;
 }

@@ -11,6 +11,7 @@ import { EstudiosService } from 'src/app/servicio/estudios.service';
 export class NuevoEstudioComponent implements OnInit {
   nombreEst: string = '';
   detalleEst: string = '';
+  periodoEst: string = '';
 
   constructor(private estudioServicio: EstudiosService, private router: Router) { }
 
@@ -18,7 +19,7 @@ export class NuevoEstudioComponent implements OnInit {
   }
 
   onCreate(): void{
-    const exp=new Estudios(this.nombreEst, this.detalleEst);
+    const exp=new Estudios(this.nombreEst, this.detalleEst, this.periodoEst);
     this.estudioServicio.save(exp).subscribe(data => {
       alert("Estudios cargados");
       this.router.navigate(['/principal']);

@@ -1,21 +1,24 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <div class="row">
-    <h1>Experiencia laboral</h1>
+    <h1 id="titulo">Experiencia laboral</h1>
     <div class="col lg-2">
         <td><button class="btn btn-outline-secondary" routerLink="/nuevaexperiencia" *ngIf="isLogged"><i class="fa-solid fa-plus"></i> Agregar nueva experiencia</button></td>
     </div>
 
-    <div class="col-xg-11">
-        <table class="table">
+    <div class="col-xg-11 table-responsive-sm">
+        <table class="table align-middle table-hover" id="tablas">
             <thead>
                 <tr >
-                    <th scope="col">Experiencia</th>
-                    <th scope="col">Descripción</th>
+                    <th style="width: 40%;"scope="col">Puesto/Cargo</th>
+                    <th style="width: 40%;" scope="col">Descripción</th>
+                    <th style="width: 10%;" scope="col">Período</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="table-group-divider">
                 <tr *ngFor="let Experiencia of exp">
                     <td><h2>{{Experiencia.nombreExp}}</h2></td>
                     <td>{{Experiencia.detalleExp}}</td>
+                    <td>{{Experiencia.periodoExp}}</td>
                     <td *ngIf="isLogged"><button class="btn btn-primary" routerLink="/editarexperiencia/{{Experiencia.id}}"><i class="bi bi-pencil-square"></i> | Editar</button></td>
                     <td *ngIf="isLogged"><button class="btn btn-danger" (click)="borrar(Experiencia.id)"><i class="bi bi-trash3-fill"></i> | Borrar</button></td>
                 </tr>

@@ -29,10 +29,10 @@ export class EditarExperienciaComponent implements OnInit {
     const id = this.activatedRouter.snapshot.params['id'];
     this.experienciaServicio.actualizar(id, this.exp).subscribe(data => {
       alert("Experiencia actualizada");
-      window.location.reload();
+      this.router.navigate(['/principal']);
     }, err => {
       alert("Error al modificar experiencia")
-      window.location.reload();
+      this.router.navigate(['/principal']);
     })
   }
   }

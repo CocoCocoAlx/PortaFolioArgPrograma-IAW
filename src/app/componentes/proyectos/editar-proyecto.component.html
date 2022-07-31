@@ -4,27 +4,27 @@
             <form (ngSubmit)="OnUpdate()" novalidate #f="ngForm">
                 <br>
                 <div class="form-group">
-                    <label for="nombreProy">Nombre del proyecto</label>
+                    <label for="nombreProy" id="titulo">Nombre del proyecto</label>
                     <input type="text" class="form-control" id="nombreProy" name="nombreProy" [(ngModel)]="proy.nombreProy" required>
                 </div>
                 <br>
                 <div class="form-group">
-                    <label for="detalleProy">Detalles del proyecto</label>
+                    <label for="detalleProy" id="titulo">Detalles del proyecto</label>
                     <input type="text" class="form-control" id="detalleProy" name="detalleProy" [(ngModel)]="proy.detalleProy" required>
                 </div>
                 <br>
                 <div class="form-group">
-                    <label for="enlaceProy">Enlace al proyecto</label>
+                    <label for="enlaceProy" id="titulo">Enlace al proyecto</label>
                     <input type="text" class="form-control" id="enlaceProy" name="enlaceProy" [(ngModel)]="proy.enlaceProy" required>
                 </div>
                 <br>
                 <div class="form-group">
-                    <label for="imagen">Imagen del proyecto</label>
+                    <label for="imagen" id="titulo">Imagen del proyecto</label>
                     <input type="text" class="form-control" id="imagen" name="imagen" [(ngModel)]="proy.imagen" required>
                 </div>
                 <br>
                 <br>
-                <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Crear</button>
+                <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Actualizar</button>
             </form>
         </div>
     </div>

@@ -1,17 +1,18 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <div class="row">
-    <h1>Habilidades</h1>
+    <h1 id="titulo">Habilidades</h1>
     <div class="col lg-2">
         <td><button class="btn btn-outline-secondary" routerLink="/nuevahabilidad" *ngIf="isLogged"><i
                     class="fa-solid fa-plus"></i> Agregar nueva habilidad</button></td>
-        <div class="col-xg-12">
-            <table class="table">
+        <div class="col-xg-12 table-responsive-sm">
+            <table class="table align-middle" id="tablas">
                 <thead>
                     <tr>
                         <th style="width: 10%;" scope="col">Habilidad</th>
                         <th style="width: 80%;" scope="col"></th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="table-group-divider">
                     <tr *ngFor="let Habilidad of hab">
                         <td><h2>{{Habilidad.nombreHab}}</h2></td>
                         <td>
