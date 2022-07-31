@@ -7,7 +7,7 @@ import { Estudios } from '../modelos/estudios';
   providedIn: 'root'
 })
 export class EstudiosService {
-  estUrl = 'http://localhost:8080/estudios/'
+  estUrl = 'https://appiawportfolio.herokuapp.com/estudios/'
 
   constructor(private httpClient: HttpClient) { }
 

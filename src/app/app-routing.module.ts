@@ -20,7 +20,7 @@ const routes: Routes = [
   {path: 'nuevoproyecto', component: NuevoProyectoComponent},
   {path: 'editarproyecto/:id', component: EditarProyectoComponent},
   {path: 'nuevahabilidad', component: NuevaHabilidadComponent},
-  {path: '', redirectTo: 'logueo', pathMatch: 'full'}
+  {path: '', redirectTo: 'principal', pathMatch: 'full'}
 ];
 
 @NgModule({

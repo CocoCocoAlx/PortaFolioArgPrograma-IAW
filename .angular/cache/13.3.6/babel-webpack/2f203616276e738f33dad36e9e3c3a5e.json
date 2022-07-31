@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class Estudios {\n  constructor(nombreEst, detalleEst, periodoEst) {\n    this.nombreEst = nombreEst;\n    this.detalleEst = detalleEst;\n    this.periodoEst = periodoEst;\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}

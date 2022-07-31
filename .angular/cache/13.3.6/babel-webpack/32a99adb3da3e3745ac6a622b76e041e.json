@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class Experiencialab {\n  constructor(nombreExp, detalleExp, periodoExp) {\n    this.nombreExp = nombreExp;\n    this.detalleExp = detalleExp;\n    this.periodoExp = periodoExp;\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}

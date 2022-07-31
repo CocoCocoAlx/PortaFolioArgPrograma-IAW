@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class Habilidad {\n  constructor(nombreHab, valorHab) {\n    this.nombreHab = nombreHab;\n    this.valorHab = valorHab;\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}

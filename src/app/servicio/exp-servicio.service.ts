@@ -7,7 +7,7 @@ import { Experiencialab } from '../modelos/experiencialab';
   providedIn: 'root'
 })
 export class ExpServicioService {
-  expUrl = 'http://localhost:8080/experiencialab/'
+  expUrl = 'https://appiawportfolio.herokuapp.com/experiencialab/'
 
   constructor(private httpClient: HttpClient) { }
 
